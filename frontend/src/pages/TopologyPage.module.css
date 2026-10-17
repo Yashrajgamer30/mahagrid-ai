@@ -1,0 +1,129 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  height: calc(100vh - 120px);
+  min-height: 700px;
+}
+
+.explorerLayout {
+  display: flex;
+  flex: 1;
+  gap: var(--space-4);
+  position: relative;
+  overflow: hidden;
+}
+
+.graphArea {
+  flex: 1;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-surface-alt);
+  border-bottom: 1px solid var(--color-border);
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: #ffffff;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  font-size: var(--text-xs);
+}
+
+.searchInput {
+  border: none;
+  outline: none;
+  font-size: var(--text-xs);
+  width: 180px;
+}
+
+.svgViewport {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+  background: radial-gradient(#E4DFD4 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.svgViewport:active {
+  cursor: grabbing;
+}
+
+.nodeCard {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nodeCard:hover {
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+}
+
+.selectedNode {
+  stroke: var(--forest-green);
+  stroke-width: 3px;
+}
+
+/* ── Side Details Inspector ──────────────────────────────── */
+.inspector {
+  width: 320px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  overflow-y: auto;
+  box-shadow: var(--shadow-sm);
+}
+
+.inspectorHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--space-3);
+}
+
+.inspectorTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-md);
+  font-weight: var(--weight-bold);
+  margin: 0;
+  color: var(--color-text);
+}
+
+.telemetryRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--text-xs);
+  padding: var(--space-1) 0;
+  border-bottom: 1px dashed var(--color-border);
+}
+
+.telemetryLabel {
+  color: var(--color-text-muted);
+}
+
+.telemetryVal {
+  font-weight: 600;
+  color: var(--color-text);
+}

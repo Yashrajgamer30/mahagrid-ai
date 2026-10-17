@@ -1,0 +1,180 @@
+/* ──────────────────────────────────────────────────────────────────
+   MahaGrid AI – Energy Grid Background Styles
+   Cinematic dark charcoal / forest-green atmosphere with warm dusk lighting,
+   realistic substation & transmission silhouettes, restrained teal electrical
+   pulses, glowing SCADA nodes, and ambient particles.
+   ────────────────────────────────────────────────────────────────── */
+
+.backgroundContainer {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+  background: linear-gradient(175deg, #090e0c 0%, #101c16 45%, #182820 75%, #1f1d18 100%);
+}
+
+/* Warm dusk horizon & ambient energy illumination */
+.atmosphericGlow {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    /* Warm dusk horizon glow at lower center/right */
+    radial-gradient(circle at 65% 95%, rgba(220, 115, 45, 0.18) 0%, rgba(180, 83, 9, 0.08) 35%, transparent 65%),
+    /* Forest green ambient glow */
+    radial-gradient(circle at 20% 30%, rgba(20, 184, 166, 0.08) 0%, rgba(36, 87, 70, 0.14) 40%, transparent 65%),
+    /* Restrained teal grid node glow */
+    radial-gradient(circle at 75% 35%, rgba(45, 212, 191, 0.07) 0%, transparent 50%),
+    /* Vignette darkening overlay for contrast */
+    radial-gradient(circle at 50% 50%, transparent 40%, rgba(6, 10, 8, 0.72) 100%);
+}
+
+.svgCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── Substation Yard & Tower Infrastructure (Silhouettes) ── */
+.substationInfrastructure {
+  opacity: 0.85;
+}
+
+/* ── Geometric SCADA Busbar Coordinates (Subtle Dark Grid) ─ */
+.gridBusbar {
+  stroke: rgba(45, 212, 191, 0.07);
+  stroke-width: 1;
+  stroke-dasharray: 4 14;
+}
+
+/* ── Catenary High-Voltage Transmission Corridors ─────────── */
+.transmissionCorridor {
+  stroke: rgba(45, 212, 191, 0.18);
+  stroke-width: 1.5;
+  fill: none;
+}
+
+/* ── Restrained Teal & Saffron Electrical Energy Pulses ───── */
+.energyPulseTeal {
+  stroke: #2dd4bf;
+  stroke-width: 2.4;
+  stroke-dasharray: 20 60;
+  stroke-linecap: round;
+  fill: none;
+  animation: pulseFlowForward 8.5s linear infinite;
+  opacity: 0.9;
+}
+
+.energyPulseTealFast {
+  stroke: #14b8a6;
+  stroke-width: 2.2;
+  stroke-dasharray: 14 50;
+  stroke-linecap: round;
+  fill: none;
+  animation: pulseFlowForward 6.5s linear infinite;
+  opacity: 0.85;
+}
+
+.energyPulseDuskAmber {
+  stroke: #fbbf24;
+  stroke-width: 2.2;
+  stroke-dasharray: 16 48;
+  stroke-linecap: round;
+  fill: none;
+  animation: pulseFlowReverse 7.5s linear infinite;
+  opacity: 0.8;
+}
+
+.energyPulseSubtle {
+  stroke: #22d3ee;
+  stroke-width: 1.8;
+  stroke-dasharray: 12 40;
+  stroke-linecap: round;
+  fill: none;
+  animation: pulseFlowForward 10s linear infinite;
+  opacity: 0.7;
+}
+
+@keyframes pulseFlowForward {
+  from {
+    stroke-dashoffset: 320;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes pulseFlowReverse {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 320;
+  }
+}
+
+/* ── Glowing SCADA Grid Nodes ────────────────────────────── */
+.nodeHalo {
+  transform-origin: center;
+  animation: nodeHaloPulse 4s ease-in-out infinite;
+}
+
+.nodeHaloTeal {
+  transform-origin: center;
+  animation: nodeHaloPulse 3.4s ease-in-out infinite;
+  animation-delay: 1.2s;
+}
+
+.nodeHaloAmber {
+  transform-origin: center;
+  animation: nodeHaloPulse 3s ease-in-out infinite;
+  animation-delay: 0.6s;
+}
+
+@keyframes nodeHaloPulse {
+  0%, 100% {
+    transform: scale(0.9);
+    opacity: 0.15;
+  }
+  50% {
+    transform: scale(1.35);
+    opacity: 0.55;
+  }
+}
+
+/* ── Ambient Particles & Light Sparks ─────────────────────── */
+.sparkParticle {
+  animation: sparkFloat 6s ease-in-out infinite alternate;
+}
+
+@keyframes sparkFloat {
+  0% {
+    opacity: 0.2;
+    transform: translateY(0) scale(0.85);
+  }
+  50% {
+    opacity: 0.85;
+    transform: translateY(-10px) scale(1.2);
+  }
+  100% {
+    opacity: 0.3;
+    transform: translateY(-20px) scale(0.9);
+  }
+}
+
+/* ── Reduced Motion Preference ───────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .energyPulseTeal,
+  .energyPulseTealFast,
+  .energyPulseDuskAmber,
+  .energyPulseSubtle,
+  .nodeHalo,
+  .nodeHaloTeal,
+  .nodeHaloAmber,
+  .sparkParticle {
+    animation: none !important;
+  }
+}

@@ -1,0 +1,101 @@
+/* ──────────────────────────────────────────────────────────────────
+   MahaGrid AI – Application Layout Styles
+   ────────────────────────────────────────────────────────────────── */
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+
+.mainWrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 100vh;
+  transition: margin-left var(--duration-slow) var(--ease-default);
+  margin-left: var(--sidebar-width);
+}
+
+.mainWrapperCollapsed {
+  margin-left: var(--sidebar-width-collapsed);
+}
+
+.content {
+  flex: 1;
+  padding: var(--space-6);
+  max-width: var(--content-max-width);
+  width: 100%;
+  margin: 0 auto;
+  outline: none;
+}
+
+.footer {
+  padding: var(--space-3) var(--space-6);
+  border-top: 1px solid var(--color-border);
+  background: var(--color-surface);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.footerNotice {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.footerStatus {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.pulseDot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  display: inline-block;
+}
+
+.pulseDotGreen {
+  background: var(--color-ok);
+  box-shadow: 0 0 6px var(--color-ok);
+}
+
+.pulseDotAmber {
+  background: var(--color-warning);
+  box-shadow: 0 0 6px var(--color-warning);
+}
+
+.pulseDotGray {
+  background: var(--warm-gray-400);
+}
+
+.pulseDotRed {
+  background: var(--color-critical);
+  box-shadow: 0 0 6px var(--color-critical);
+}
+
+@media (max-width: 768px) {
+  .mainWrapper {
+    margin-left: 0 !important;
+  }
+
+  .content {
+    padding: var(--space-4);
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+}

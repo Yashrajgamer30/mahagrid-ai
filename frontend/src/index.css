@@ -1,0 +1,8 @@
+/* ──────────────────────────────────────────────────────────────────
+   MahaGrid AI – Root CSS Entry
+   Loads Tailwind v4, Design Tokens, Global Styles, and Leaflet CSS
+   ────────────────────────────────────────────────────────────────── */
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+@import "./styles/tokens.css";
+@import "./styles/globals.css";
